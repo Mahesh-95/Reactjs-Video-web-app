@@ -62,6 +62,13 @@ span.time-ago {
   color: rgba(0,0,0,0.7);
 }
 
+.react-player {
+  height: 77vh !important;
+  width: 100% !important;
+  margin-left: 1rem;
+}
+
+
 .css-q0jhri-MuiInputBase-root-MuiInput-root:before, .css-q0jhri-MuiInputBase-root-MuiInput-root:after{
   border-bottom: none !important;
 }

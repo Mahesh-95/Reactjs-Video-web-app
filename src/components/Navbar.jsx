@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import {AppBar, Box, Toolbar, IconButton, Typography} from '@mui/material';
+import {AppBar, Box, Toolbar, IconButton, Typography, Link} from '@mui/material';
 import {Menu, SlowMotionVideoRounded, WbSunnyOutlined, DarkModeOutlined } from '@mui/icons-material';
 import SearchBar from './SearchBar';
 
@@ -19,15 +19,19 @@ export default function Navbar() {
           >
             <Menu />
           </IconButton>
+          <Link href='/' color="inherit">
           <SlowMotionVideoRounded />
+          </Link>
           <Typography
             variant="h6"
             noWrap
             component="div"
-            sx={{ flexGrow: 1, display: { xs: 'none', sm: 'block' } }}
-          >
-            MyTube
+            sx={{ flexGrow: 1, display: { xs: 'none', sm: 'block' } }} ml="0.2rem" 
+          > <Link href='/' color="inherit">
+             MyTube
+            </Link>
           </Typography>
+          
           <SearchBar />
           {/* <IconButton
             size="large"

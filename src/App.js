@@ -9,8 +9,9 @@ import en from 'javascript-time-ago/locale/en'
 import './App.css';
 
 const Home = lazy(() => import('./pages/Home'))
+const VideoDetail = lazy(() => import('./pages/VideoDetail'))
 const Navbar = lazy(() => import('./components/Navbar'))
-const VideoDetail = lazy(() => import('./components/VideoDetail'))
+const SearchFeed = lazy(() => import('./components/SearchFeed'))
 
 TimeAgo.addDefaultLocale(en)
 
@@ -19,7 +20,7 @@ const queryClient = new QueryClient()
 function App() {
   return (
     <QueryClientProvider client={queryClient}>
-    <Suspense>
+    {/* <Suspense> */}
     <BrowserRouter>
       <Box>
         <Navbar />
@@ -27,10 +28,11 @@ function App() {
           <Route path='/' exact element = {<Home />} />
           <Route path='/video/:id' exact element = {<VideoDetail />} />
           <Route path='/channel/:id' exact element = {<Home />} />
+          <Route path='/search/:searchInput' exact element = {<SearchFeed />} />
         </Routes>
       </Box>
     </BrowserRouter>
-    </Suspense>
+    {/* </Suspense> */}
     <ReactQueryDevtools initialIsOpen = {false} position='bottom-right'/>
     </QueryClientProvider>
   );
